@@ -1,0 +1,7 @@
+C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\bin\Debug\StatBraggerBE.exe.config
+C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\bin\Debug\StatBraggerBE.exe
+C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\bin\Debug\StatBraggerBE.pdb
+C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\obj\Debug\StatBraggerBE.csprojAssemblyReference.cache
+C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\obj\Debug\StatBraggerBE.csproj.CoreCompileInputs.cache
+C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\obj\Debug\StatBraggerBE.exe
+C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\obj\Debug\StatBraggerBE.pdb
