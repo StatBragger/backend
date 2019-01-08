@@ -5,3 +5,7 @@ C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\obj\Debug\StatBr
 C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\obj\Debug\StatBraggerBE.csproj.CoreCompileInputs.cache
 C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\obj\Debug\StatBraggerBE.exe
 C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\obj\Debug\StatBraggerBE.pdb
+C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\bin\Debug\Newtonsoft.Json.dll
+C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\bin\Debug\Newtonsoft.Json.xml
+C:\Users\acittadino\Desktop\backend\StatBraggerBE\StatBraggerBE\obj\Debug\StatBraggerBE.csproj.CopyComplete
