@@ -92,9 +92,10 @@ namespace StatBraggerBE
                 + epicUserHandle + "\nPlatform: " + platformNameLong +
                 "\n\n\nSeason 7\n----------------------------\n\nSolo Total Score: " + s7SoloScore +
                 "\n\nSolo Wins: " + s7SoloWins + "\nSolo Top 10: " + s7SoloTop10 + "\nSolo Top 25: "
-                + s7SoloTop25 + "\n\nSolo Kills: " + s7SoloKills + "\nSolo K/D: " + s7SoloKD + "\nSolo Average Kills Per Game: " + s7SoloKPG + 
+                + s7SoloTop25 + "\nSolo Win Percent: " + s7SoloWinRatio + "%\n\nSolo Kills: " 
+                + s7SoloKills + "\nSolo K/D: " + s7SoloKD + "\nSolo Average Kills Per Game: " + s7SoloKPG + 
                 "\n\nSolo Total Matches: " + s7SoloTotalMatches + "\nSolo Average Score Per Match: "
-                + s7SoloScorePerMatch + "\nSolo Win Ratio: " + s7SoloWinRatio;
+                + s7SoloScorePerMatch;
         }
     }
 }
