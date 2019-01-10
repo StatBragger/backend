@@ -9,9 +9,8 @@ using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Web;
 /*
- Anthony Cittadino
- James Raynor
- Last update 1/9/2019
+ Anthony Cittadino 
+ Last update 1/10/2019
 */
 namespace StatBraggerBE
 {
@@ -39,19 +38,44 @@ namespace StatBraggerBE
                         this.content = await content.ReadAsStringAsync();
                         this.data = JObject.Parse(this.content);
                         Player player = new Player();
+                        //Basic User Data
                         player.accountID = this.data.accountId;
                         player.epicUserHandle = this.data.epicUserHandle;
                         player.platformNameLong = this.data.platformNameLong;
-                        player.s7SoloWins = this.data.stats.p2.top1.displayValue;
-                        player.s7SoloScore = this.data.stats.p2.score.displayValue;
-                        player.s7SoloTop10 = this.data.stats.p2.top10.displayValue;
-                        player.s7SoloTop25 = this.data.stats.p2.top25.displayValue;
-                        player.s7SoloKD = this.data.stats.p2.kd.displayValue;
-                        player.s7SoloWinRatio = this.data.stats.p2.winRatio.displayValue;
-                        player.s7SoloTotalMatches = this.data.stats.p2.matches.displayValue;
-                        player.s7SoloKills = this.data.stats.p2.kills.displayValue;
-                        player.s7SoloKPG = this.data.stats.p2.kpg.displayValue;
-                        player.s7SoloScorePerMatch = this.data.stats.p2.scorePerMatch.displayValue;
+                        //Lifetime Solo Stats
+                        player.ltSoloWins = this.data.stats.p2.top1.displayValue;
+                        player.ltSoloScore = this.data.stats.p2.score.displayValue;
+                        player.ltSoloTop10 = this.data.stats.p2.top10.displayValue;
+                        player.ltSoloTop25 = this.data.stats.p2.top25.displayValue;
+                        player.ltSoloKD = this.data.stats.p2.kd.displayValue;
+                        player.ltSoloWinRatio = this.data.stats.p2.winRatio.displayValue;
+                        player.ltSoloTotalMatches = this.data.stats.p2.matches.displayValue;
+                        player.ltSoloKills = this.data.stats.p2.kills.displayValue;
+                        player.ltSoloKPG = this.data.stats.p2.kpg.displayValue;
+                        player.ltSoloScorePerMatch = this.data.stats.p2.scorePerMatch.displayValue;
+                        //Lifetime Duo Stats
+                        player.ltDuoWins = this.data.stats.p10.top1.displayValue;
+                        player.ltDuoScore = this.data.stats.p10.score.displayValue;
+                        player.ltDuoTop5 = this.data.stats.p10.top5.displayValue;
+                        player.ltDuoTop12 = this.data.stats.p10.top12.displayValue;
+                        player.ltDuoKD = this.data.stats.p10.kd.displayValue;
+                        player.ltDuoWinRatio = this.data.stats.p10.winRatio.displayValue;
+                        player.ltDuoTotalMatches = this.data.stats.p10.matches.displayValue;
+                        player.ltDuoKills = this.data.stats.p10.kills.displayValue;
+                        player.ltDuoKPG = this.data.stats.p10.kpg.displayValue;
+                        player.ltDuoScorePerMatch = this.data.stats.p10.scorePerMatch.displayValue;
+                        //Lifetime Squad Stats
+                        player.ltSquadWins = this.data.stats.p9.top1.displayValue;
+                        player.ltSquadScore = this.data.stats.p9.score.displayValue;
+                        player.ltSquadTop3 = this.data.stats.p9.top3.displayValue;
+                        player.ltSquadTop6 = this.data.stats.p9.top6.displayValue;
+                        player.ltSquadKD = this.data.stats.p9.kd.displayValue;
+                        player.ltSquadWinRatio = this.data.stats.p9.winRatio.displayValue;
+                        player.ltSquadTotalMatches = this.data.stats.p9.matches.displayValue;
+                        player.ltSquadKills = this.data.stats.p9.kills.displayValue;
+                        player.ltSquadKPG = this.data.stats.p9.kpg.displayValue;
+                        player.ltSquadScorePerMatch = this.data.stats.p9.scorePerMatch.displayValue;
+
                         return player;
                     }
                 }
@@ -70,32 +94,68 @@ namespace StatBraggerBE
 
     public class Player
     {
+        //Basic User Data
         public string accountID { get; set; }
         public string platformNameLong { get; set; }
         public string epicUserHandle { get; set; }
-
-        public string s7SoloScore { get; set; }
-        public string s7SoloWins { get; set; }
-        public string s7SoloTop10 { get; set; }
-        public string s7SoloTop25 { get; set; }
-        public string s7SoloKD { get; set; }
-        public string s7SoloWinRatio { get; set; }
-        public string s7SoloTotalMatches { get; set; }
-        public string s7SoloKills { get; set; }
-        public string s7SoloKPG { get; set; }
-        public string s7SoloScorePerMatch { get; set; }
+        //Lifetime Solo Stats
+        public string ltSoloScore { get; set; }
+        public string ltSoloWins { get; set; }
+        public string ltSoloTop10 { get; set; }
+        public string ltSoloTop25 { get; set; }
+        public string ltSoloKD { get; set; }
+        public string ltSoloWinRatio { get; set; }
+        public string ltSoloTotalMatches { get; set; }
+        public string ltSoloKills { get; set; }
+        public string ltSoloKPG { get; set; }
+        public string ltSoloScorePerMatch { get; set; }
+        //Lifetime Duo Stats
+        public string ltDuoScore { get; set; }
+        public string ltDuoWins { get; set; }
+        public string ltDuoTop5 { get; set; }
+        public string ltDuoTop12 { get; set; }
+        public string ltDuoKD { get; set; }
+        public string ltDuoWinRatio { get; set; }
+        public string ltDuoTotalMatches { get; set; }
+        public string ltDuoKills { get; set; }
+        public string ltDuoKPG { get; set; }
+        public string ltDuoScorePerMatch { get; set; }
+        //Lifetime Squad Stats
+        public string ltSquadScore { get; set; }
+        public string ltSquadWins { get; set; }
+        public string ltSquadTop3 { get; set; }
+        public string ltSquadTop6 { get; set; }
+        public string ltSquadKD { get; set; }
+        public string ltSquadWinRatio { get; set; }
+        public string ltSquadTotalMatches { get; set; }
+        public string ltSquadKills { get; set; }
+        public string ltSquadKPG { get; set; }
+        public string ltSquadScorePerMatch { get; set; }
 
         override
         public string ToString()
         {
+            //TOSTRING FOR TESTING PURPOSES ONLY
             return "\n\n\nAccount ID: " + accountID + "\nEpic name: "
                 + epicUserHandle + "\nPlatform: " + platformNameLong +
-                "\n\n\nSeason 7\n----------------------------\n\nSolo Total Score: " + s7SoloScore +
-                "\n\nSolo Wins: " + s7SoloWins + "\nSolo Top 10: " + s7SoloTop10 + "\nSolo Top 25: "
-                + s7SoloTop25 + "\nSolo Win Percent: " + s7SoloWinRatio + "%\n\nSolo Kills: " 
-                + s7SoloKills + "\nSolo K/D: " + s7SoloKD + "\nSolo Average Kills Per Game: " + s7SoloKPG + 
-                "\n\nSolo Total Matches: " + s7SoloTotalMatches + "\nSolo Average Score Per Match: "
-                + s7SoloScorePerMatch;
+                "\n\n\n\n------------------" +
+                "\n|   LIFETIME     |\n------------------\n\n\n\n" +
+                "SOLO\n----------------------\nTotal Score: " + ltSoloScore +
+                "\n\nWins: " + ltSoloWins + "\nTop 10: " + ltSoloTop10 + "\nTop 25: "
+                + ltSoloTop25 + "\nWin Percent: " + ltSoloWinRatio + "%\n\nKills: " 
+                + ltSoloKills + "\nK/D: " + ltSoloKD + "\nAverage Kills Per Game: " + ltSoloKPG + 
+                "\n\nTotal Matches: " + ltSoloTotalMatches + "\nAverage Score Per Match: "
+                + ltSoloScorePerMatch +"\n\n\n\nDUO\n----------------------\nTotal Score: " + ltDuoScore +
+                "\n\nWins: " + ltDuoWins + "\nTop 5: " + ltDuoTop5 + "\nTop 12: "
+                + ltDuoTop12 + "\nWin Percent: " + ltDuoWinRatio + "%\n\nKills: "
+                + ltDuoKills + "\nK/D: " + ltDuoKD + "\nAverage Kills Per Game: " + ltDuoKPG +
+                "\n\nTotal Matches: " + ltDuoTotalMatches + "\nAverage Score Per Match: "
+                + ltDuoScorePerMatch + "\n\n\n\nSQUAD\n----------------------\nTotal Score: " + ltSquadScore +
+                "\n\nWins: " + ltSquadWins + "\nTop 3: " + ltSquadTop3 + "\nTop 6: "
+                + ltSquadTop6 + "\nWin Percent: " + ltSquadWinRatio + "%\n\nKills: "
+                + ltSquadKills + "\nK/D: " + ltSquadKD + "\nAverage Kills Per Game: " + ltSquadKPG +
+                "\n\nTotal Matches: " + ltSquadTotalMatches + "\nAverage Score Per Match: "
+                + ltSquadScorePerMatch;
         }
     }
 }

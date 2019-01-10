@@ -21,7 +21,7 @@ namespace StatBraggerBE
             string platform = Console.ReadLine();
             FortniteAPI player = new FortniteAPI(name, platform);
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(player.getPlayer().ToString());
             Console.ReadLine();
         }
