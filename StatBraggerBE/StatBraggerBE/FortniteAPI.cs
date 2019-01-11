@@ -8,9 +8,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Web;
+using System.Threading;
+using System.Diagnostics;
 /*
- Anthony Cittadino 
- Last update 1/10/2019
+Anthony Cittadino 
+Last update 1/10/2019
 */
 namespace StatBraggerBE
 {
@@ -26,7 +28,7 @@ namespace StatBraggerBE
             this.platform = platform;
         }
 
-        public async Task<Player> PullData()
+        public async Task<FortnitePlayer> PullData()
         {
             using (HttpClient client = new HttpClient())
             {
@@ -37,7 +39,7 @@ namespace StatBraggerBE
                     {
                         this.content = await content.ReadAsStringAsync();
                         this.data = JObject.Parse(this.content);
-                        Player player = new Player();
+                        FortnitePlayer player = new FortnitePlayer();
                         //Basic User Data
                         player.accountID = this.data.accountId;
                         player.epicUserHandle = this.data.epicUserHandle;
@@ -82,17 +84,26 @@ namespace StatBraggerBE
             }
         }
 
-        public Player getPlayer()
+        public FortnitePlayer getPlayer()
         {
-            Player p = null;
-            Task.Run(async () => { p = await PullData(); }).GetAwaiter().GetResult();
+            FortnitePlayer p = null;
+            try
+            {
+                Task.Run(async () => { p = await PullData(); }).GetAwaiter().GetResult();
+            }
+            catch(Exception e)
+            {
+                Program.Main(null);
+                return null;
+            }
+          
             return p;
         }
     }
 
   
 
-    public class Player
+    public class FortnitePlayer
     {
         //Basic User Data
         public string accountID { get; set; }
